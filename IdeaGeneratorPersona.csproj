@@ -55,8 +55,14 @@
 
 	<ItemGroup>
 	  <None Remove="Chat\" />
+	  <None Remove="ChatControl\" />
+	  <None Remove="ChatControl\Converters\" />
+	  <None Remove="ChatControl\Models\" />
 	</ItemGroup>
 	<ItemGroup>
 	  <Folder Include="Chat\" />
+	  <Folder Include="ChatControl\" />
+	  <Folder Include="ChatControl\Converters\" />
+	  <Folder Include="ChatControl\Models\" />
 	</ItemGroup>
 </Project>
