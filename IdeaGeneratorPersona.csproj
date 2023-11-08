@@ -51,6 +51,7 @@
 
 	<ItemGroup>
 		<PackageReference Include="Telerik.UI.for.Maui.Trial" Version="*" />
+		<PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
 	</ItemGroup>
 
 	<ItemGroup>
