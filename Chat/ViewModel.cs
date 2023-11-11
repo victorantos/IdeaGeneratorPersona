@@ -22,12 +22,12 @@ namespace IdeaGeneratorPersona.Chat
             this.Items = new ObservableCollection<SimpleChatItem>();
 
             // Simulate async data loading
-            Device.StartTimer(TimeSpan.FromMilliseconds(500), () =>
-            {
-                this.Items.Add(new SimpleChatItem { Author = this.Bot, Text = "Hi." });
-                this.Items.Add(new SimpleChatItem { Author = this.Bot, Text = "How can I help you?" });
-                return false;
-            });
+            // Device.StartTimer(TimeSpan.FromMilliseconds(500), () =>
+            // {
+            //     this.Items.Add(new SimpleChatItem { Author = this.Bot, Text = "Hi." });
+            //     this.Items.Add(new SimpleChatItem { Author = this.Bot, Text = "How can I help you?" });
+            //     return false;
+            // });
         }
         public Author Me
         {

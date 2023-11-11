@@ -4,9 +4,9 @@ public partial class App : Application
 {
 	public App()
 	{
-		InitializeComponent();
+		//InitializeComponent();
 
-        this.MainPage = new AppShell();
+       // this.MainPage = new AppShell();
 	}
 }
 
