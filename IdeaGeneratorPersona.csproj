@@ -58,6 +58,7 @@
 	  <None Remove="ChatControl\" />
 	  <None Remove="ChatControl\Converters\" />
 	  <None Remove="ChatControl\Models\" />
+	  <None Remove="Pages\" />
 	</ItemGroup>
 	<ItemGroup>
 	  <Folder Include="Chat\" />
@@ -65,5 +66,9 @@
 	  <Folder Include="ChatControl\Converters\" />
 	  <Folder Include="ChatControl\Models\" />
 	  <Folder Include="Layouts/" />
+	  <Folder Include="Pages\" />
 	</ItemGroup>
+	<ItemGroup>
+		<EmbeddedResource Include="config.xml" />
+		</ItemGroup>
 </Project>

@@ -1,4 +1,5 @@
 ﻿using IdeaGeneratorPersona.Common;
+
 namespace IdeaGeneratorPersona.Services;
 
  public interface IConfigurationService

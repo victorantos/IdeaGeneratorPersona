@@ -1,6 +1,10 @@
 ﻿using System.Windows.Input;
 using IdeaGeneratorPersona.Common;
 using IdeaGeneratorPersona.Services;
+using IdeaGeneratorPersona.Helpers;
+
+using Microsoft.Maui.ApplicationModel;
+using Microsoft.Maui.Controls;
 
 namespace IdeaGeneratorPersona.ViewModels;
 
@@ -25,7 +29,7 @@ public abstract class PageViewModel : ViewModelBase
 
         this.configurationService = DependencyService.Get<IConfigurationService>();
 
-        this.AppTitle = configurationService.Configuration.HeaderTitle;
+        this.AppTitle = "This is my title"; // configurationService.Configuration.HeaderTitle;
         this.NavigateToDocumentationCommand = new Command(this.NavigateToDocumentation);
         this.NavigateToFeedbackPortalCommand = new Command(this.NavigateToFeedbackPortal);
         this.NavigateToDownloadTrialCommand = new Command(this.NavigateToDownloadTrial);
