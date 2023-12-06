@@ -1,12 +1,120 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="IdeaGeneratorPersona.Pages.MainPageDesktop"
-             Title="MainPageDesktop">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+             xmlns:telerik="http://schemas.telerik.com/2022/xaml/maui"
+             xmlns:converters="clr-namespace:IdeaGeneratorPersona.Converters"
+             xmlns:pages="clr-namespace:IdeaGeneratorPersona.Pages"
+             xmlns:views="clr-namespace:IdeaGeneratorPersona.Views"
+             NavigationPage.HasNavigationBar="False"
+             NavigationPage.HasBackButton="False"
+             x:Class="IdeaGeneratorPersona.Pages.MainPageDesktop">
+
+    <VisualElement.Resources>
+        <Style x:Key="SelectedControlItemStyle" TargetType="telerik:NonVirtualizedItemsControlItemContainer">
+            <Setter Property="BackgroundColor" Value="{StaticResource ApplicationAccentColor}" />
+        </Style>
+        <DataTemplate x:Key="ControlItemTemplate">
+            <VerticalStackLayout>
+                <BoxView HeightRequest="6"
+                         BackgroundColor="{AppThemeBinding Light={StaticResource SecondaryBackgroundColor}, Dark={StaticResource SecondaryBackgroundColorDark}}" />
+                <telerik:RadBorder HeightRequest="32">
+                    <Grid ColumnDefinitions="*, Auto"
+                          BackgroundColor="{AppThemeBinding Light={StaticResource ItemBackgroundColor}, Dark={StaticResource ItemBackgroundColorDark}}"
+                          Margin="4, 0, 0, 0">
+                        <views:NavigationItemView BackgroundColor="Transparent"
+                                                  Header="{Binding DisplayName}"
+                                                  Icon="{Binding Icon}" />
+                        <ContentView Grid.Column="1"
+                                     Content="{Binding Status, Converter={StaticResource StatusTagToTemplateConverter}}"
+                                     VerticalOptions="Center"
+                                     Margin="6, 0" />
+                    </Grid>
+                </telerik:RadBorder>
+                <BoxView HeightRequest="6"
+                         BackgroundColor="{AppThemeBinding Light={StaticResource SecondaryBackgroundColor}, Dark={StaticResource SecondaryBackgroundColorDark}}" />
+            </VerticalStackLayout>
+        </DataTemplate>
+    </VisualElement.Resources>
+
+    <Grid>
+        
+        <Grid BackgroundColor="{AppThemeBinding Light={StaticResource DefaultBackgroundColor}, Dark={StaticResource DefaultBackgroundColorDark}}">
+            <HorizontalStackLayout VerticalOptions="Start">
+                <Image Source="homepagebackground.png"
+                       Aspect="Center" />
+                <Image Source="homepagebackground.png"
+                       Aspect="Center" />
+            </HorizontalStackLayout>
+            <Grid Padding="64, 32"
+                  Grid.Row="0"
+                  Grid.RowSpan="2">
+                <ContentView Content="{Binding SelectedControl, Converter={StaticResource ModelToViewConverter}}" />
+                <views:HomeViewDesktop IsVisible="{Binding IsHomeSelected}" />
+                <!--<views:SearchViewDesktop IsVisible="{Binding IsSearchSelected}"
+                                         SelectedSearchResult="{Binding SelectedSearchResult}" />-->
+            </Grid>
+        </Grid>
+
+        <Grid x:Name="overlay"
+              BackgroundColor="Transparent" />
+
+        <HorizontalStackLayout HorizontalOptions="Start"
+                               IsClippedToBounds="True">
+            <Grid x:Name="navigationMenu"
+                  RowDefinitions="Auto, *"
+                  BackgroundColor="{AppThemeBinding Light={StaticResource SecondaryBackgroundColor}, Dark={StaticResource SecondaryBackgroundColorDark}}">
+                <VerticalStackLayout>
+                    <Grid ColumnDefinitions="4, *"
+                          Padding="0, 8">
+                        <views:NavigationItemView x:Name="burgerView"
+                                                  Icon="icon_burger.png"
+                                                  Grid.Column="1" />
+                    </Grid>
+                    <Grid ColumnDefinitions="4, *">
+                        <Grid IsVisible="{Binding IsSearchSelected}"
+                              BackgroundColor="{StaticResource ApplicationAccentColor}"
+                              HeightRequest="32"
+                              VerticalOptions="Center" />
+                        <views:NavigationItemView Icon="search.png"
+                                                  TapCommand="{Binding SelectSearchCommand}"
+                                                  Grid.Column="1"
+                                                  Padding="0, 8" />
+                    </Grid>
+                    <Grid ColumnDefinitions="4, *"
+                          Margin="0, 24, 0, 0">
+                        <Grid IsVisible="{Binding IsHomeSelected}"
+                              BackgroundColor="{StaticResource ApplicationAccentColor}"
+                              HeightRequest="32"
+                              VerticalOptions="Center" />
+                        <views:NavigationItemView Header="Home"
+                                                  Icon="home.png"
+                                                  TapCommand="{Binding SelectHomeCommand}"
+                                                  Grid.Column="1"
+                                                  Padding="0, 8" />
+                    </Grid>
+                </VerticalStackLayout>
+                <telerik:NonVirtualizedItemsControl x:Name="controlsView"
+                                                    MinimumWidthRequest="{OnIdiom Phone=0, Desktop=280}"
+                                                    ItemTemplate="{StaticResource ControlItemTemplate}"
+                                                    ItemsSource="{Binding Controls}"
+                                                    SelectedItem="{Binding SelectedControl, Mode=TwoWay}"
+                                                    SelectedItemStyle="{StaticResource SelectedControlItemStyle}"
+                                                    CanUnselectSingleItem="False"
+                                                    Grid.Row="1"
+                                                    HorizontalOptions="Start"
+                                                    PropertyChanged="controlsView_PropertyChanged">
+                    <VisualElement.Resources>
+                        <Style TargetType="ScrollView">
+                            <Setter Property="VerticalScrollBarVisibility" Value="Never" />
+                        </Style>
+                    </VisualElement.Resources>
+                    <telerik:NonVirtualizedItemsControl.ItemsLayoutTemplate>
+                        <DataTemplate>
+                            <VerticalStackLayout Spacing="4" />
+                        </DataTemplate>
+                    </telerik:NonVirtualizedItemsControl.ItemsLayoutTemplate>
+                </telerik:NonVirtualizedItemsControl>
+            </Grid>
+        </HorizontalStackLayout>
+
+    </Grid>
 </ContentPage>

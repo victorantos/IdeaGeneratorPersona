@@ -62,6 +62,9 @@
 	  <None Remove="Layouts\QGrid\" />
 	  <None Remove="Layouts\UniformLayout\" />
 	  <None Remove="Styles\" />
+	  <None Remove="ViewModels\Search\" />
+	  <None Remove="Selectors\" />
+	  <None Remove="Services\Search\" />
 	</ItemGroup>
 	<ItemGroup>
 	  <Folder Include="Chat\" />
@@ -73,6 +76,9 @@
 	  <Folder Include="Layouts\QGrid\" />
 	  <Folder Include="Layouts\UniformLayout\" />
 	  <Folder Include="Styles\" />
+	  <Folder Include="ViewModels\Search\" />
+	  <Folder Include="Selectors\" />
+	  <Folder Include="Services\Search\" />
 	</ItemGroup>
 	<ItemGroup>
 		<EmbeddedResource Include="config.xml" />
