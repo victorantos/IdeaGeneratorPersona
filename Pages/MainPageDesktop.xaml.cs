@@ -29,7 +29,7 @@ namespace IdeaGeneratorPersona.Pages
         }
 
         private void OnLoaded(object sender, EventArgs e)
-        {
+        {   
             this.Loaded -= this.OnLoaded;
 
             this.Dispatcher.DispatchDelayed(TimeSpan.FromSeconds(2), () =>

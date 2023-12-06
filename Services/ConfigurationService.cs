@@ -13,11 +13,11 @@ namespace IdeaGeneratorPersona.Services
     /// </summary>
     public class ConfigurationService : IConfigurationService
     {
-        private const string ResourceLocation = "config.xml";
+        private const string ResourceLocation = "IdeaGeneratorPersona.config.xml";
 
         public ConfigurationService()
         {
-            //this.Configuration = LoadConfiguration(ResourceLocation);
+            this.Configuration = LoadConfiguration(ResourceLocation);
         }
 
         public Configuration Configuration { get; private set; }

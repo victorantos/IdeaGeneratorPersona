@@ -21,7 +21,7 @@ public class HomeViewModel : PageViewModel
         Configuration configuration = configurationService.Configuration;
 
         //this.Controls = GetControls(configuration);
-        //this.HighlightControls = GetHighlightControls(configuration);
+        this.HighlightControls = GetHighlightControls(configuration);
         //this.Examples = GetExamples(configuration);
         //this.MauiHighlights = GetMauiHighlights(configuration);
        // this.DemoApps = GetDemoApps(configuration);
