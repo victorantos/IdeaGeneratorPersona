@@ -30,7 +30,7 @@ public class Control
 
     public bool IsThemable { get; set; }
 
-    //public List<Example> Examples { get; set; }
+    public List<Example> Examples { get; set; }
 
     [XmlIgnore]
     public Configuration Configuration { get; set; }

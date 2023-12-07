@@ -17,26 +17,26 @@ public static class Utils
         return type;
     }
 
-    // public static object CreateView(Example example, bool createBindingContext)
-    // {
-    //     IExampleService exampleService = DependencyService.Get<IExampleService>();
-    //     View exampleView = exampleService.CreateExample(example) as View;
+    public static object CreateView(Example example, bool createBindingContext)
+    {
+        IExampleService exampleService = DependencyService.Get<IExampleService>();
+        View exampleView = exampleService.CreateExample(example) as View;
 
-    //     if (createBindingContext && exampleView != null && exampleView.BindingContext == null)
-    //     {
-    //         Type viewModelType = GetExampleViewModelType(example.ControlName, example.Name);
+        if (createBindingContext && exampleView != null && exampleView.BindingContext == null)
+        {
+            Type viewModelType = GetExampleViewModelType(example.ControlName, example.Name);
 
-    //         if (viewModelType == null)
-    //         {
-    //             viewModelType = typeof(ViewModels.ExampleViewModel);
-    //         }
+            if (viewModelType == null)
+            {
+                viewModelType = typeof(ViewModels.ExampleViewModel);
+            }
 
-    //         object viewModel = Activator.CreateInstance(viewModelType);
-    //         exampleView.BindingContext = viewModel;
-    //     }
+            object viewModel = Activator.CreateInstance(viewModelType);
+            exampleView.BindingContext = viewModel;
+        }
 
-    //     return exampleView;
-    // }
+        return exampleView;
+    }
 
     public static object CreateView(Control control)
     {

@@ -54,10 +54,6 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <None Remove="Chat\" />
-	  <None Remove="ChatControl\" />
-	  <None Remove="ChatControl\Converters\" />
-	  <None Remove="ChatControl\Models\" />
 	  <None Remove="Pages\" />
 	  <None Remove="Layouts\QGrid\" />
 	  <None Remove="Layouts\UniformLayout\" />
@@ -65,12 +61,17 @@
 	  <None Remove="ViewModels\Search\" />
 	  <None Remove="Selectors\" />
 	  <None Remove="Services\Search\" />
+	  <None Remove="Layouts\VerticalUniformLayout\" />
+	  <None Remove="Examples\" />
+	  <None Remove="Examples\ChatControl\" />
+	  <None Remove="Examples\ChatControl\ChatRoomExample\" />
+	  <None Remove="Examples\ChatControl\ChatRoomExample\Converters\" />
+	  <None Remove="Examples\ChatControl\ChatRoomExample\Misc\" />
+	  <None Remove="Examples\ChatControl\ChatRoomExample\Models\" />
+	  <None Remove="Examples\ChatControl\ChatRoomExample\Services\" />
+	  <None Remove="Examples\ChatControl\ChatRoomExample\ViewModels\" />
 	</ItemGroup>
 	<ItemGroup>
-	  <Folder Include="Chat\" />
-	  <Folder Include="ChatControl\" />
-	  <Folder Include="ChatControl\Converters\" />
-	  <Folder Include="ChatControl\Models\" />
 	  <Folder Include="Layouts/" />
 	  <Folder Include="Pages\" />
 	  <Folder Include="Layouts\QGrid\" />
@@ -79,6 +80,15 @@
 	  <Folder Include="ViewModels\Search\" />
 	  <Folder Include="Selectors\" />
 	  <Folder Include="Services\Search\" />
+	  <Folder Include="Layouts\VerticalUniformLayout\" />
+	  <Folder Include="Examples\" />
+	  <Folder Include="Examples\ChatControl\" />
+	  <Folder Include="Examples\ChatControl\ChatRoomExample\" />
+	  <Folder Include="Examples\ChatControl\ChatRoomExample\Converters\" />
+	  <Folder Include="Examples\ChatControl\ChatRoomExample\Misc\" />
+	  <Folder Include="Examples\ChatControl\ChatRoomExample\Models\" />
+	  <Folder Include="Examples\ChatControl\ChatRoomExample\Services\" />
+	  <Folder Include="Examples\ChatControl\ChatRoomExample\ViewModels\" />
 	</ItemGroup>
 	<ItemGroup>
 		<EmbeddedResource Include="config.xml" />

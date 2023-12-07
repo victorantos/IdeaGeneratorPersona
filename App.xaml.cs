@@ -129,10 +129,10 @@ public partial class App : Application
     private void InitializeDependencies()
     {
         DependencyService.Register<IConfigurationService, ConfigurationService>();
-        //DependencyService.Register<IResourceService, AssemblyResourceService>();
+        DependencyService.Register<IResourceService, AssemblyResourceService>();
         //DependencyService.Register<IFileViewerService, FileViewerService>();
         DependencyService.Register<INavigationService, NavigationService>();
-        //DependencyService.Register<IExampleService, ExampleService>();
+        DependencyService.Register<IExampleService, ExampleService>();
         //DependencyService.Register<IConfigurationAreaService, ConfigurationAreaService>();
         DependencyService.Register<IControlsService, ControlsService>();
         //DependencyService.Register<ISearchService, SearchService>();

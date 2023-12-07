@@ -13,17 +13,17 @@ public class HomeViewModel : PageViewModel
     private Control selectedControl;
     private bool isHomeSelected;
     private bool isSearchSelected;
-    //private HighlightedSearchResult selectedSearchResult;
+    private HighlightedSearchResult selectedSearchResult;
 
     public HomeViewModel()
     {
         IConfigurationService configurationService = DependencyService.Get<IConfigurationService>();
         Configuration configuration = configurationService.Configuration;
 
-        //this.Controls = GetControls(configuration);
+        this.Controls = GetControls(configuration);
         this.HighlightControls = GetHighlightControls(configuration);
-        //this.Examples = GetExamples(configuration);
-        //this.MauiHighlights = GetMauiHighlights(configuration);
+        this.Examples = GetExamples(configuration);
+        this.MauiHighlights = GetMauiHighlights(configuration);
        // this.DemoApps = GetDemoApps(configuration);
 
         this.SelectHomeCommand = new Command(this.SelectHome);
@@ -39,7 +39,7 @@ public class HomeViewModel : PageViewModel
 
     public ObservableCollection<HighlightedControl> HighlightControls { get; }
 
-    //public ObservableCollection<Example> Examples { get; }
+    public ObservableCollection<Example> Examples { get; }
 
     public ObservableCollection<MauiHighlight> MauiHighlights { get; }
 
@@ -149,21 +149,21 @@ public class HomeViewModel : PageViewModel
         return result;
     }
 
-    //private static ObservableCollection<Example> GetExamples(Configuration configuration)
-    //{
-    //    ObservableCollection<Example> result = new ObservableCollection<Example>();
+    private static ObservableCollection<Example> GetExamples(Configuration configuration)
+    {
+        ObservableCollection<Example> result = new ObservableCollection<Example>();
 
-    //    foreach (Control control in configuration.Controls)
-    //    {
-    //        foreach (Example example in control.Examples)
-    //        {
-    //            example.ControlName = control.Name;
-    //            result.Add(example);
-    //        }
-    //    }
+        foreach (Control control in configuration.Controls)
+        {
+            foreach (Example example in control.Examples)
+            {
+                example.ControlName = control.Name;
+                result.Add(example);
+            }
+        }
 
-    //    return result;
-    //}
+        return result;
+    }
 
     private static ObservableCollection<MauiHighlight> GetMauiHighlights(Configuration configuration)
     {
@@ -255,14 +255,14 @@ public class HomeViewModel : PageViewModel
             return;
         }
 
-        //if (control.Examples.Count == 1)
-        //{
-        //    this.NavigationService.NavigateToExampleAsync(control.Examples[0]);
-        //}
-        //else
-        //{
+        if (control.Examples.Count == 1)
+        {
+            this.NavigationService.NavigateToExampleAsync(control.Examples[0]);
+        }
+        else
+        {
             this.NavigationService.NavigateToAsync<ControlViewModel>(control);
-        //}
+        }
     }
 
     //public void NavigateToSearch()

@@ -19,11 +19,11 @@ namespace IdeaGeneratorPersona.Pages
 
             TapGestureRecognizer overlayTap = new TapGestureRecognizer();
             overlayTap.Tapped += this.overlay_Tapped;
-            //this.overlay.GestureRecognizers.Add(overlayTap);
+            this.overlay.GestureRecognizers.Add(overlayTap);
 
             TapGestureRecognizer burgerTap = new TapGestureRecognizer();
             burgerTap.Tapped += this.burgerView_Tapped;
-            //this.burgerView.GestureRecognizers.Add(burgerTap);
+            this.burgerView.GestureRecognizers.Add(burgerTap);
 
             this.Loaded += this.OnLoaded;
         }
@@ -58,28 +58,28 @@ namespace IdeaGeneratorPersona.Pages
         {
             if (this.navigationMenuDesiredWidth <= 0)
             {
-                //this.navigationMenuDesiredWidth = this.navigationMenu.Bounds.Width;
+                this.navigationMenuDesiredWidth = this.navigationMenu.Bounds.Width;
             }
 
-            //double oldWidth = this.navigationMenu.Bounds.Width;
+            double oldWidth = this.navigationMenu.Bounds.Width;
             double newWidth = this.isNavigationMenuOpen ? this.navigationMenuDesiredWidth : 40;
 
-            //if (oldWidth != newWidth)
-            //{
-            //    if (DeviceInfo.Platform == DevicePlatform.WinUI)
-            //    {
-            //        this.navigationMenu.Animate("width", new Animation(value =>
-            //        {
-            //            this.navigationMenu.WidthRequest = value;
-            //        }, oldWidth, newWidth, Easing.CubicInOut));
-            //    }
-            //    else
-            //    {
-            //        this.navigationMenu.WidthRequest = newWidth;
-            //    }
-            //}
+            if (oldWidth != newWidth)
+            {
+                if (DeviceInfo.Platform == DevicePlatform.WinUI)
+                {
+                    this.navigationMenu.Animate("width", new Animation(value =>
+                    {
+                        this.navigationMenu.WidthRequest = value;
+                    }, oldWidth, newWidth, Easing.CubicInOut));
+                }
+                else
+                {
+                    this.navigationMenu.WidthRequest = newWidth;
+                }
+            }
 
-            //this.overlay.IsVisible = this.isNavigationMenuOpen;
+            this.overlay.IsVisible = this.isNavigationMenuOpen;
         }
 
         private void overlay_Tapped(object sender, EventArgs e)
@@ -94,10 +94,10 @@ namespace IdeaGeneratorPersona.Pages
 
         private void controlsView_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
         {
-            //if (e.PropertyName == nameof(this.controlsView.SelectedItem))
-            //{
-            //    this.IsNavigationMenuOpen = false;
-            //}
+            if (e.PropertyName == nameof(this.controlsView.SelectedItem))
+            {
+                this.IsNavigationMenuOpen = false;
+            }
         }
     }
 }

@@ -25,10 +25,10 @@ namespace IdeaGeneratorPersona.Services
             return controls.Where(p => p.Name == controlName).FirstOrDefault();
         }
 
-        //public Example GetControlExample(string controlName, string exampleName)
-        //{
-        //    var control = this.GetControlByName(controlName);
-        //    return control.Examples.Where(p => p.Name == exampleName).FirstOrDefault();
-        //}
+        public Example GetControlExample(string controlName, string exampleName)
+        {
+            var control = this.GetControlByName(controlName);
+            return control.Examples.Where(p => p.Name == exampleName).FirstOrDefault();
+        }
     }
 }

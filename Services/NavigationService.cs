@@ -30,24 +30,24 @@ public class NavigationService : INavigationService
         return this.navigation.PushAsync(page);
     }
 
-    //public Task NavigateToExampleAsync(Example example)
-    //{
-    //    Type viewModelType = typeof(ExampleViewModel);
-    //    Page view = this.CreatePage(viewModelType);
+    public Task NavigateToExampleAsync(Example example)
+    {
+        Type viewModelType = typeof(ExampleViewModel);
+        Page view = this.CreatePage(viewModelType);
 
-    //    Type exampleViewModelType = Utils.GetExampleViewModelType(example.ControlName, example.Name);
-    //    if (exampleViewModelType != null)
-    //    {
-    //        viewModelType = exampleViewModelType;
-    //    }
+        Type exampleViewModelType = Utils.GetExampleViewModelType(example.ControlName, example.Name);
+        //if (exampleViewModelType != null)
+        //{
+        //    viewModelType = exampleViewModelType;
+        //}
 
-    //    var viewModel = (ExampleViewModel)Activator.CreateInstance(viewModelType);
-    //    viewModel.Example = example;
-    //    viewModel.HeaderTitle = example.DisplayName;
-    //    view.BindingContext = viewModel;
+        var viewModel = (ExampleViewModel)Activator.CreateInstance(viewModelType);
+        viewModel.Example = example;
+        viewModel.HeaderTitle = example.DisplayName;
+        view.BindingContext = viewModel;
 
-    //    return this.navigation.PushAsync(view);
-    //}
+        return this.navigation.PushAsync(view);
+    }
 
     //public Task NavigateToConfigurationPageAsync(ExampleViewModel viewModel)
     //{
@@ -56,12 +56,12 @@ public class NavigationService : INavigationService
     //    return this.navigation.PushAsync(configurationPage);
     //}
 
-    //public Task NavigateToDescriptionPageAsync(DescriptionViewModel descriptionViewModel)
-    //{
-    //    DescriptionPage descriptionPage = new DescriptionPage();
-    //    descriptionPage.BindingContext = descriptionViewModel;
-    //    return this.navigation.PushAsync(descriptionPage);
-    //}
+    public Task NavigateToDescriptionPageAsync(DescriptionViewModel descriptionViewModel)
+    {
+        DescriptionPage descriptionPage = new DescriptionPage();
+        descriptionPage.BindingContext = descriptionViewModel;
+        return this.navigation.PushAsync(descriptionPage);
+    }
 
     public Task NavigateToRootAsync()
     {

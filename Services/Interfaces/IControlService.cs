@@ -9,6 +9,6 @@ namespace IdeaGeneratorPersona.Services
 
         public Control GetControlByName(string controlName);
 
-        //public Example GetControlExample(string controlName, string exampleName);
+        public Example GetControlExample(string controlName, string exampleName);
     }
 }

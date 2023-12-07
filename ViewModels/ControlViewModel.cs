@@ -10,27 +10,27 @@ public class ControlViewModel : PageViewModel
 {
     private readonly Control control;
 
-    //private Example selectedExample;
+    private Example selectedExample;
 
     public ControlViewModel(Control control)
     {
         this.control = control;
         this.HeaderTitle = control.DisplayName;
-        //this.Examples = new ObservableCollection<Example>();
+        this.Examples = new ObservableCollection<Example>();
 
-        // foreach (var example in control.Examples)
-        // {
-        //     example.ControlName = control.Name;
-        //     this.Examples.Add(example);
-        // }
+        foreach (var example in control.Examples)
+        {
+            example.ControlName = control.Name;
+            this.Examples.Add(example);
+        }
 
-        //this.NavigateToExampleCommand = new Command(obj => this.NavigateTo(obj as Example));
+        this.NavigateToExampleCommand = new Command(obj => this.NavigateTo(obj as Example));
         this.NavigateToControlDocumentationCommand = new Command(this.NavigateToControlDocumentation);
         this.NavigateToControlFeedbackPortalCommand = new Command(this.NavigateToControlFeedbackPortal);
 
         if (DeviceInfo.Idiom == DeviceIdiom.Desktop)
         {
-            //this.SelectedExample = this.Examples.FirstOrDefault();
+            this.SelectedExample = this.Examples.FirstOrDefault();
         }
     }
 
@@ -42,13 +42,13 @@ public class ControlViewModel : PageViewModel
         }
     }
 
-    //public ObservableCollection<Example> Examples { get; private set; }
+    public ObservableCollection<Example> Examples { get; private set; }
 
-    // public Example SelectedExample
-    // {
-    //     get { return this.selectedExample; }
-    //     set { this.UpdateValue(ref this.selectedExample, value); }
-    // }
+    public Example SelectedExample
+    {
+        get { return this.selectedExample; }
+        set { this.UpdateValue(ref this.selectedExample, value); }
+    }
 
     public ICommand NavigateToExampleCommand { get; private set; }
 
@@ -56,15 +56,15 @@ public class ControlViewModel : PageViewModel
 
     public ICommand NavigateToControlFeedbackPortalCommand { get; private set; }
 
-    // public void NavigateTo(Example example)
-    // {
-    //     if (example == null)
-    //     {
-    //         return;
-    //     }
+    public void NavigateTo(Example example)
+    {
+        if (example == null)
+        {
+            return;
+        }
 
-    //     this.NavigationService.NavigateToExampleAsync(example);
-    // }
+        this.NavigationService.NavigateToExampleAsync(example);
+    }
 
     private void NavigateToControlDocumentation()
     {

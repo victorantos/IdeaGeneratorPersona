@@ -1380,8 +1380,8 @@
 
 	<HighlightedControls>
 		<HighlightedControl>
-			<DisplayName>DataGrid</DisplayName>
-			<Icon>datagrid_white.png</Icon>
+			<DisplayName>Chat</DisplayName>
+			<Icon>chat.png</Icon>
 		</HighlightedControl>
 		<HighlightedControl>
 			<DisplayName>NavigationView</DisplayName>
