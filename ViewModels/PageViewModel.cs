@@ -29,7 +29,7 @@ public abstract class PageViewModel : ViewModelBase
 
         this.configurationService = DependencyService.Get<IConfigurationService>();
 
-        this.AppTitle = "This is my title"; // configurationService.Configuration.HeaderTitle;
+        this.AppTitle = configurationService.Configuration.HeaderTitle;
         this.NavigateToDocumentationCommand = new Command(this.NavigateToDocumentation);
         this.NavigateToFeedbackPortalCommand = new Command(this.NavigateToFeedbackPortal);
         this.NavigateToDownloadTrialCommand = new Command(this.NavigateToDownloadTrial);

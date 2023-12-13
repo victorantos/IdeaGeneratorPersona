@@ -270,7 +270,7 @@ public class HomeViewModel : PageViewModel
         //this.NavigationService.NavigateToAsync<ControlViewModel>(this.Controls.Where(c => c.Name == "Chat").FirstOrDefault());
         var chatControl = this.Controls.Where(c => c.Name == "Chat").FirstOrDefault();
         if (chatControl != null)
-            this.NavigationService.NavigateToExampleAsync(chatControl.Examples.Where(c => c.Name == "ChatRoom").FirstOrDefault());
+            this.NavigationService.NavigateToExampleAsync(chatControl.Examples.Where(c => c.Name == "TravelAssistance").FirstOrDefault());
     }
 
     //public void NavigateToSearch()

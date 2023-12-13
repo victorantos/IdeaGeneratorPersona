@@ -82,6 +82,9 @@
 	  <None Remove="Examples\ChatControl\ChatRoomExample\Models\" />
 	  <None Remove="Examples\ChatControl\ChatRoomExample\Services\" />
 	  <None Remove="Examples\ChatControl\ChatRoomExample\ViewModels\" />
+	  <None Remove="Examples\ChatControl\TravelAssistanceExample\" />
+	  <None Remove="Examples\ChatControl\TravelAssistanceExample\Converters\" />
+	  <None Remove="Examples\ChatControl\TravelAssistanceExample\Models\" />
 	</ItemGroup>
 	<ItemGroup>
 	  <Folder Include="Layouts/" />
@@ -101,6 +104,9 @@
 	  <Folder Include="Examples\ChatControl\ChatRoomExample\Models\" />
 	  <Folder Include="Examples\ChatControl\ChatRoomExample\Services\" />
 	  <Folder Include="Examples\ChatControl\ChatRoomExample\ViewModels\" />
+	  <Folder Include="Examples\ChatControl\TravelAssistanceExample\" />
+	  <Folder Include="Examples\ChatControl\TravelAssistanceExample\Converters\" />
+	  <Folder Include="Examples\ChatControl\TravelAssistanceExample\Models\" />
 	</ItemGroup>
 	<ItemGroup>
 		<EmbeddedResource Include="config.xml" />
