@@ -103,7 +103,7 @@ public class ChatroomService
                 return;
             }
 
-            Task.Delay(this.random.Next(1000, 3000)).Wait();
+            Task.Delay(this.random.Next(100, 1000)).Wait();
             ChatroomParticipant participant = GetRandomParticipant();
 
             if (!this.SimulateStartTyping(participant))
@@ -119,7 +119,7 @@ public class ChatroomService
 
             this.EndSimulation();
 
-            this.RunConversation();
+          //  this.RunConversation();
         });
     }
 
