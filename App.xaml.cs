@@ -24,7 +24,10 @@ public partial class App : Application
         }
         else
         {
-            this.MainPage = new NavigationPage(new MainPageMobile());
+            var mainPage = new MainPageMobile();
+            this.MainPage = new NavigationPage(mainPage);
+            mainPage.NavigateToChat();
+
 
 #if __ANDROID__ || __IOS__
             // TODO: When https://github.com/dotnet/maui/issues/5835 is really fixed, remove the following lines and the respective methods.

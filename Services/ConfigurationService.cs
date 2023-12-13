@@ -51,12 +51,12 @@ namespace IdeaGeneratorPersona.Services
             for (int index = 0; index < count; index++)
             {
                 var control = configuration.Controls[index];
-                //if (control.Status == StatusType.Normal
-                //    && control.Examples.Any(e => e.Status == StatusType.New || e.Status == StatusType.Updated))
-                //{
-                //    // If we have updated or new example we want to mark the control as updated as well.
-                //    control.Status = StatusType.Updated;
-                //}
+                if (control.Status == StatusType.Normal
+                    && control.Examples.Any(e => e.Status == StatusType.New || e.Status == StatusType.Updated))
+                {
+                    // If we have updated or new example we want to mark the control as updated as well.
+                    control.Status = StatusType.Updated;
+                }
             }
         }
 
@@ -78,27 +78,27 @@ namespace IdeaGeneratorPersona.Services
                 {
                     UpdateControl(control);
 
-                    //if (control.Examples.Count == 0)
-                    //{
-                    //    configuration.Controls.RemoveAt(index);
-                    //}
+                    if (control.Examples.Count == 0)
+                    {
+                        configuration.Controls.RemoveAt(index);
+                    }
                 }
             }
         }
 
         private static void UpdateControl(Control control)
         {
-            //var count = control.Examples.Count;
+            var count = control.Examples.Count;
 
-            //for (int index = count - 1; index >= 0; index--)
-            //{
-            //    var example = control.Examples[index];
+            for (int index = count - 1; index >= 0; index--)
+            {
+                var example = control.Examples[index];
 
-            //    if (IsExcluded(example.ExcludeFrom))
-            //    {
-            //        control.Examples.RemoveAt(index);
-            //    }
-            //}
+                if (IsExcluded(example.ExcludeFrom))
+                {
+                    control.Examples.RemoveAt(index);
+                }
+            }
         }
 
         private static bool IsExcluded(string exclusions)

@@ -2,15 +2,15 @@
 using Microsoft.Maui.Graphics;
 using Microsoft.Maui.Layouts;
 using System;
-using ILayout = Microsoft.Maui.ILayout;
+
 
 namespace IdeaGeneratorPersona.Layouts;
 
 public class VerticalUniformLayoutManager : ILayoutManager
 {
-    private readonly ILayout layout;
+    private readonly Microsoft.Maui.ILayout layout;
 
-    public VerticalUniformLayoutManager(ILayout layout)
+    public VerticalUniformLayoutManager(Microsoft.Maui.ILayout layout)
     {
         this.layout = layout;
     }

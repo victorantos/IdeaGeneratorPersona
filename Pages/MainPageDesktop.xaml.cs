@@ -8,7 +8,7 @@ namespace IdeaGeneratorPersona.Pages
 {
     public partial class MainPageDesktop : ContentPage
     {
-        private bool isNavigationMenuOpen = true;
+        private bool isNavigationMenuOpen = false;
         private double navigationMenuDesiredWidth;
 
         public MainPageDesktop()

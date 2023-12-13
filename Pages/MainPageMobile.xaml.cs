@@ -14,6 +14,11 @@ namespace IdeaGeneratorPersona.Pages
             this.BindingContext = new HomeViewModel();
         }
 
+        public void NavigateToChat()
+        {
+            HomeViewModel vm = (HomeViewModel)this.BindingContext;
+            vm.NavigateToChat();
+        }
         private void Search_Clicked(object sender, EventArgs e)
         {
             HomeViewModel vm = (HomeViewModel)this.BindingContext;

@@ -100,20 +100,20 @@ public class HomeViewModel : PageViewModel
         }
     }
 
-    //public HighlightedSearchResult SelectedSearchResult
-    //{
-    //    get
-    //    {
-    //        return this.selectedSearchResult;
-    //    }
-    //    set
-    //    {
-    //        if (this.UpdateValue(ref this.selectedSearchResult, value))
-    //        {
-    //            this.OnSelectedSearchResultChanged();
-    //        }
-    //    }
-    //}
+    public HighlightedSearchResult SelectedSearchResult
+    {
+        get
+        {
+            return this.selectedSearchResult;
+        }
+        set
+        {
+            if (this.UpdateValue(ref this.selectedSearchResult, value))
+            {
+                this.OnSelectedSearchResultChanged();
+            }
+        }
+    }
 
     private static ObservableCollection<Control> GetControls(Configuration configuration)
     {
@@ -265,6 +265,11 @@ public class HomeViewModel : PageViewModel
         }
     }
 
+    public void NavigateToChat()
+    {
+        this.NavigationService.NavigateToAsync<ControlViewModel>(this.Controls.Where(c => c.DisplayName == "Chat").FirstOrDefault()); ;
+    }
+
     //public void NavigateToSearch()
     //{
     //    this.NavigationService.NavigateToAsync<SearchViewModelMobile>();
@@ -288,20 +293,20 @@ public class HomeViewModel : PageViewModel
         }
     }
 
-    //private void OnSelectedSearchResultChanged()
-    //{
-    //    HighlightedSearchResult searchResult = this.selectedSearchResult;
-    //    if (searchResult == null)
-    //    {
-    //        return;
-    //    }
+    private void OnSelectedSearchResultChanged()
+    {
+        HighlightedSearchResult searchResult = this.selectedSearchResult;
+        if (searchResult == null)
+        {
+            return;
+        }
 
-    //    Control control = this.Controls.FirstOrDefault(c => c.Name == searchResult.ControlName);
-    //    if (control == null)
-    //    {
-    //        return;
-    //    }
+        Control control = this.Controls.FirstOrDefault(c => c.Name == searchResult.ControlName);
+        if (control == null)
+        {
+            return;
+        }
 
-    //    this.SelectedControl = control;
-    //}
+        this.SelectedControl = control;
+    }
 }
