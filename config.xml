@@ -338,7 +338,7 @@
 				<Example>
 					<Name>ChatRoom</Name>
 					<Page>ChatRoomView</Page>
-					<DisplayName>Chat Room</DisplayName>
+					<DisplayName>Idea Generator</DisplayName>
 					<Icon>chat.png</Icon>
 					<Description>This example demonstrates one way to go about implementing a chat room with multiple participants. Some of the features that are demonstrated are: typing indicator, timebreaks, color customization, MVVM support.</Description>
 				</Example>

@@ -24,14 +24,14 @@ public class ChatroomService
     {
         participantInfos = new List<Tuple<string, string>>
         {
-            new Tuple<string, string>("Maria", "person_1.png"),
-            new Tuple<string, string>("Clark", "person_2.png"),
-            new Tuple<string, string>("Robert", "person_3.png"),
-            new Tuple<string, string>("Sara", "person_4.png"),
-            new Tuple<string, string>("Philip", "person_5.png"),
-            new Tuple<string, string>("Frankie", "person_6.png"),
-            new Tuple<string, string>("Naomi", "person_7.png"),
-            new Tuple<string, string>("Zoe", "person_8.png"),
+            new Tuple<string, string>("AI bot", "person_1.png"),
+            //new Tuple<string, string>("Me", "person_2.png"),
+            //new Tuple<string, string>("Robert", "person_3.png"),
+            //new Tuple<string, string>("Sara", "person_4.png"),
+            //new Tuple<string, string>("Philip", "person_5.png"),
+            //new Tuple<string, string>("Frankie", "person_6.png"),
+            //new Tuple<string, string>("Naomi", "person_7.png"),
+            //new Tuple<string, string>("Zoe", "person_8.png"),
         };
     }
 
@@ -78,10 +78,10 @@ public class ChatroomService
     private void InitParticipants()
     {
         this.participants = new List<ChatroomParticipant>();
-        int count = this.random.Next(3, 6);
+        //int count = this.random.Next(0, 3);
         int r = this.random.Next(0, 10);
 
-        for (int i = 0; i < count; i++)
+        for (int i = 0; i < 1; i++)
         {
             Tuple<string, string> info = this.GetParticipantInfo(r + i);
             ChatroomParticipant participant = new ChatroomParticipant { ShortName = info.Item1, Avatar = info.Item2 };

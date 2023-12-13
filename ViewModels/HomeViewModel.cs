@@ -267,7 +267,10 @@ public class HomeViewModel : PageViewModel
 
     public void NavigateToChat()
     {
-        this.NavigationService.NavigateToAsync<ControlViewModel>(this.Controls.Where(c => c.DisplayName == "Chat").FirstOrDefault()); ;
+        //this.NavigationService.NavigateToAsync<ControlViewModel>(this.Controls.Where(c => c.Name == "Chat").FirstOrDefault());
+        var chatControl = this.Controls.Where(c => c.Name == "Chat").FirstOrDefault();
+        if (chatControl != null)
+            this.NavigationService.NavigateToExampleAsync(chatControl.Examples.Where(c => c.Name == "ChatRoom").FirstOrDefault());
     }
 
     //public void NavigateToSearch()

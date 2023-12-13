@@ -20,7 +20,8 @@ public class ChatRoomViewModel : NotifyPropertyChangedBase
         this.items = new ObservableCollection<ChatroomMessage>();
         this.typingParticipants = new ObservableCollection<ChatroomParticipant>();
         this.chatroomService = new ChatroomService();
-        this.AddHistory();
+        // TODO no history for now
+        //this.AddHistory();
         this.chatroomService.Signal += this.ChatroomService_Signal;
         this.sendMessageCommand = new Command(this.OnSendMessage, this.CanSendMessage);
     }
