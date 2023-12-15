@@ -331,7 +331,7 @@
 				<Example>
 					<Name>TravelAssistance</Name>
 					<Page>TravelAssistanceView</Page>
-					<DisplayName>Travel Assistance</DisplayName>
+					<DisplayName>AI Travel Assistance Bot</DisplayName>
 					<Icon>chat.png</Icon>
 					<Description>This example demonstrates a possible implementation of the RadChat control for a travel agency by integrating it with the Microsoft Bot Framework via Azure Bot Service.</Description>
 				</Example>

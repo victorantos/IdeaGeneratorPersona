@@ -193,7 +193,7 @@
                        WidthRequest="48"
                        HeightRequest="48"
                        Source="vacationbot.png" />
-                <Label Text="Telerik Travel Assistance"
+                <Label Text="Let's book a holiday"
                        FontSize="18"
                        VerticalTextAlignment="Center" />
             </HorizontalStackLayout>
