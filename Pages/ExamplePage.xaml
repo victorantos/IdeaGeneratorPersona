@@ -21,8 +21,8 @@
         </Grid.RowDefinitions>
         <Grid ColumnDefinitions="Auto, Auto, *"
               Style="{StaticResource HeaderStyle}">
-            <ImageButton Clicked="Back_Clicked"
-                         Style="{OnPlatform Default={StaticResource DefaultBackButtonStyle}, iOS={StaticResource IOSBackButtonStyle}}" />
+            <!--<ImageButton Clicked="Back_Clicked"
+                         Style="{OnPlatform Default={StaticResource DefaultBackButtonStyle}, iOS={StaticResource IOSBackButtonStyle}}" />-->
             <Label Grid.Column="1"
                    Style="{StaticResource HeaderLabelStyle}"
                    Text="{Binding HeaderTitle}" />
