@@ -99,5 +99,11 @@ namespace IdeaGeneratorPersona.Pages
                 this.IsNavigationMenuOpen = false;
             }
         }
+
+        public void NavigateToChat()
+        {
+            HomeViewModel vm = (HomeViewModel)this.BindingContext;
+            vm.NavigateToChat();
+        }
     }
 }

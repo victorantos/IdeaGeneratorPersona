@@ -34,7 +34,7 @@
 	</PropertyGroup>
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net7.0-ios|AnyCPU'">
 	  <CreatePackage>false</CreatePackage>
-	  <CodesignKey>Apple Development: victorantos@gmail.com (8KDA3GMPPS)</CodesignKey>
+	  <CodesignKey>iPhone Distribution</CodesignKey>
 	</PropertyGroup>
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net7.0-maccatalyst|AnyCPU'">
 	  <CreatePackage>false</CreatePackage>
@@ -42,6 +42,11 @@
 	  <PackageSigningKey>3rd Party Mac Developer Installer</PackageSigningKey>
 	  <MtouchDebug>true</MtouchDebug>
 	  <EnableCodeSigning>False</EnableCodeSigning>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net7.0-maccatalyst|AnyCPU'">
+	  <CreatePackage>false</CreatePackage>
+	  <CodesignKey>Mac Developer</CodesignKey>
+	  <PackageSigningKey>3rd Party Mac Developer Installer</PackageSigningKey>
 	</PropertyGroup>
 	<ItemGroup>
 		<!-- App Icon -->

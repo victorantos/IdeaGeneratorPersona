@@ -20,7 +20,9 @@ public partial class App : Application
 
         if (DeviceInfo.Idiom == DeviceIdiom.Desktop)
         {
-            this.MainPage = new NavigationPage(new MainPageDesktop());
+            var mainPage = new MainPageDesktop();
+            this.MainPage = new NavigationPage(mainPage);
+            mainPage.NavigateToChat();
         }
         else
         {
