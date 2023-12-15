@@ -39,10 +39,10 @@
                              Source="info_mobile_white.png"
                              IsVisible="{Binding Example.Description, Converter={StaticResource NullOrEmptyToBoolConverter}}"
                              Style="{StaticResource ExamplePageImageButtonStyle}"/>
-                <ImageButton Command="{Binding NavigateToExampleCodeCommand}"
+                <!--<ImageButton Command="{Binding NavigateToExampleCodeCommand}"
                              CommandParameter="{Binding Example}"
                              Source="viewcode_white.png"
-                             Style="{StaticResource ExamplePageImageButtonStyle}"/>
+                             Style="{StaticResource ExamplePageImageButtonStyle}"/>-->
             </HorizontalStackLayout>
         </Grid>
         <ContentView Content="{Binding Converter={StaticResource ModelToViewConverter}}" Grid.Row="1" />
